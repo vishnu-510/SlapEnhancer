@@ -31,7 +31,7 @@ Features
 ---
 
  Screenshot
-![SlapEnhancer UI](ui.png)
+![SlapEnhancer UI](ui.Screenshot)
 
 ---
 
