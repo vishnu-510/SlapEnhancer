@@ -1,45 +1,43 @@
- SlapEnhancer 
+# SlapEnhancer
 
-**SlapEnhancer** is a toy-style audio effect plugin designed to make slap house basses more punchy, bright, and percussive.
+A real-time audio effect plugin built using C++ and the JUCE framework.
 
-Built using **JUCE** and **C++**, the plugin focuses on transient enhancement, harmonic bite, and controlled punch while keeping a fun, minimal UI.
+## Overview
 
----
+SlapEnhancer is an audio processing plugin designed to enhance transient punch,
+harmonic content, and brightness in bass-heavy material.
 
-Features
-- Transient "Slap" enhancer
-- Harmonic saturation (Bite)
-- Punch control
-- Brightness tilt
-- Output level control
-- Toy-style blue / white / pink UI
-- Smooth rotary controls
+## Architecture
 
----
+- `PluginProcessor` handles audio processing and parameter management.
+- `PluginEditor` handles GUI layout and control binding.
+- Parameters are managed using `AudioProcessorValueTreeState`.
+- Audio processing occurs inside `processBlock()`.
 
- Built With
-- **C++**
-- **JUCE Framework**
-- **Digital Signal Processing (DSP)**
-- **Audio Units (AU)**
+## DSP Signal Flow
 
----
+Input
+→ Transient Section
+→ Saturation Stage
+→ Brightness Control
+→ Output Gain
 
- Tested In
-- Logic Pro (AU)
+## Real-Time Considerations
 
----
+- No dynamic memory allocation inside `processBlock()`
+- Audio thread and UI thread are separated
+- Processing performed per-sample inside the audio buffer loop
+- Parameters accessed through APVTS
 
- Screenshot
-![SlapEnhancer UI](ui.Screenshot)
+## Technologies Used
 
----
+- C++
+- JUCE Framework
+- Audio Units (AU)
 
- How To Build
-1. Open `SlapEnhancer.jucer` in **Projucer**
-2. Export project
-3. Open generated project in Xcode
-4. Build AU target
+## Future Improvements
 
----
-
+- Add parameter smoothing
+- Add oversampling for saturation
+- Modularize DSP stages
+- Add performance profiling
