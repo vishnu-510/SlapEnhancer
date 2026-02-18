@@ -41,3 +41,15 @@ Input
 - Add oversampling for saturation
 - Modularize DSP stages
 - Add performance profiling
+
+## Build
+
+This project was developed using the JUCE framework.
+
+To build:
+1. Open the project in Projucer.
+2. Generate IDE project files.
+3. Build using Xcode (macOS).
+
+Future versions will migrate to a CMake-based workflow.
+
